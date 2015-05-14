@@ -6,6 +6,7 @@
 
 #include <memory>
 #include <string>
+#include <iostream>
 
 #include "IntProxy.hpp"
 #include "Common/Logger.hpp"
@@ -34,7 +35,7 @@ void IntProxy::prepareInterface() {
 	// Register handlers
 	h_onNewData.setup(boost::bind(&IntProxy::onNewData, this));
 	registerHandler("onNewData", &h_onNewData);
-//	addDependency("onNewData", &in_data);
+	//addDependency("onNewData", &in_data);
 	addDependency("onNewData", NULL);
 
 }
@@ -65,7 +66,8 @@ bool IntProxy::onStart() {
 void IntProxy::onNewData() {
 	std_msgs::Int32 msg;
 //	msg.data = in_data.read();
-	msg.data = 5;
+	std::cout << in_data.read();
+    msg.data = 5;
 	pub.publish(msg);
 	ros::spinOnce();
 }

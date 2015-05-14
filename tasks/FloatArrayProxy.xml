@@ -2,13 +2,13 @@
 	<!-- reference task information -->
 	<Reference>
 		<Author>
-			<name>Maciej Stefanczyk</name>
+			<name>Patryk Wąsowski</name>
 			<link></link>
 		</Author>
 		
 		<Description>
-			<brief>IntProxy ROS connector</brief>
-			<full>Test task for data exchange between DisCODe and ROS</full>	
+			<brief>FloatArrayProxy ROS connector</brief>
+			<full>Test task for float data exchange between DisCODe and ROS</full>	
 		</Description>
 	</Reference>
 	
@@ -16,7 +16,7 @@
 	<Subtasks>
 		<Subtask name="Main">
 			<Executor name="Processing"  period="1">
-				<Component name="Proxy" type="ROSProxy:IntProxy" priority="1" bump="0">
+				<Component name="Proxy" type="ROSProxy:FloatArrayProxy" priority="1" bump="0">
 					<param name="mode.loop">1</param>
 				</Component>
 			</Executor>
